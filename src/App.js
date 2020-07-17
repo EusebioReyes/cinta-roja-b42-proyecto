@@ -9,6 +9,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import NoteView from './views/NoteView';
 
 function App() {
   return (
@@ -20,14 +21,17 @@ function App() {
         <Route exact path = "/note/add">
           <AddNote></AddNote>
         </Route>
-        <Route exact path = "/note">
+        <Route exact path = "/note/edit">
           <Edit></Edit>
         </Route>
-        <Route exact path = "/search">
-          <Search></Search>
+        <Route exact path = "/note/:id">
+          <NoteView></NoteView>
         </Route>
         <Route exact path = "*">
           <Error404></Error404>
+        </Route>
+        <Route exact path = "/note/search">
+          <Search></Search>
         </Route>
       </Switch>
     </Router>

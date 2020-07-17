@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const MenuBar = ({title}) =>{
-    console.log(title);
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
  <Link className="navbar-brand" to="/">Inicio</Link>
@@ -15,10 +14,10 @@ const MenuBar = ({title}) =>{
        <Link className="nav-link" to="/note/Add">Agregar Nota <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
-       <Link className="nav-link" to="note/edit">Editar</Link>
+       <Link className="nav-link" to="/note/edit">Editar</Link>
       </li>
       <li className="nav-item">
-       <Link className="nav-link" to="/note/search">Buscar</Link>
+       <Link className="nav-link" to="/note/search/">Buscar</Link>
       </li>
     </ul>
   </div>
