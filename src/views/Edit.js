@@ -19,8 +19,8 @@ const Edit = () =>{
             }else{
                 setError('No existe esa tarea');
             }
-        }).catch(({error}) => {
-            setError(error);
+        }).catch(({response}) => {
+            setError(response);
         });
     }
 
@@ -31,9 +31,7 @@ const Edit = () =>{
                 id = {note}
                 name = {notes[note].name}
                 date = {notes[note].date}
-                total = {notes[note].total}
-                isEdit = {false}
-            >
+                total = {notes[note].total}            >
 
             </Note>);
     }

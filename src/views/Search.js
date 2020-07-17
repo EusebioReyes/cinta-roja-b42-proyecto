@@ -4,9 +4,9 @@ import BaseLayout from './../components/BaseLayout';
 
 const Search = () =>{
     return(
-        <BaseLayout title="Error">
+        <BaseLayout title="Buscar">
             <div className='d-flex justify-content-center'>
-              
+               
             </div>
         </BaseLayout>
     );

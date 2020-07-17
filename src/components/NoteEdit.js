@@ -1,20 +1,17 @@
-import React, { useState, useEffect, useParameters } from 'react';
+import React, { useState } from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 import axios from 'axios';
 
 const NoteEdit = ({id, nameNote, dateNote, totalNote}) =>{
     const url = `https://cinta-roja-b42-proyecto.firebaseio.com/notes/${id}.json`
     let location = useLocation();
-    console.log('locacion');
-    console.log(location);
 
-    const history = useHistory();
-
+    const history = useHistory(); 
     const [error, setError] = useState('');
 
     const updateNote = (data)=>{
         
-        console.log("ENtra antes del axios")
+        console.log("Entra antes del axios")
         axios.patch(url, data)
         .then((data)=>{
             console.log('exito')
@@ -54,35 +51,54 @@ const NoteEdit = ({id, nameNote, dateNote, totalNote}) =>{
 
     return( 
 
+       /*  <form>
+         <div className="form-group " >
+                <label htmlFor="title">Numero de Nota:</label>
+            </div>
+            <div className="form-group ">
+                <label htmlFor="date">Fecha: </label>
+                <input type="text" className="form-control" id="date" min='0' name="date" ></input>
+            </div>
+            
+            <div className="form-group ">
+                <label htmlFor="name">Cliente: </label>
+                <input type="text" className="form-control" id="name" name="name"></input>
+            </div>
+            <div className="form-group ">
+                <label htmlFor="total">Total: </label>
+                <input type="number" className="form-control" id="total"  min='0' name="total"></input>
+            </div>
+    </form> */
+
         <form onSubmit={submitNote}>
             <div className="form-group " >
                 <label htmlFor="title">Numero de Nota: {id} </label>
             </div>
-            <div className="form-group col-sm-2 col-form-label">
+            <div className="form-group ">
                 <label htmlFor="date">Fecha: </label>
                 <input type="text" className="form-control" id="date" min='0' name="date" defaultValue={dateNote}></input>
             </div>
             
-            <div className="form-group col-sm-2 col-form-label">
+            <div className="form-group ">
                 <label htmlFor="name">Cliente: </label>
                 <input type="text" className="form-control" id="name" name="name" defaultValue={nameNote} ></input>
             </div>
-            <div className="form-group col-sm-2 col-form-label">
+            <div className="form-group ">
                 <label htmlFor="total">Total: </label>
                 <input type="number" className="form-control" id="total"  min='0' name="total" defaultValue = {totalNote}></input>
             </div>
             {location.data
             ?
             <>
-            <div className="form-group col-sm-2 col-form-label">
-                <button  className="btn btn-primary "  onClick={deleteNote} >Eliminar Nota</button>
+            <div>
+                <button  className="btn btn-primary  "  onClick={deleteNote} >Eliminar Nota</button>
             </div>
             </>
             :
             <>
-            <div className="form-group col-sm-2 col-form-label">
-                <button type="submit" className="btn btn-primary">Guardar Nota</button>
-            </div>
+                <div>
+                    <button type="submit" className="btn btn-primary ">Guardar Nota</button>
+                </div>
             </>
             }
        

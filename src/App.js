@@ -27,11 +27,11 @@ function App() {
         <Route exact path = "/note/:id">
           <NoteView></NoteView>
         </Route>
+        <Route exact path = "/search">
+          <Search></Search>
+        </Route>
         <Route exact path = "*">
           <Error404></Error404>
-        </Route>
-        <Route exact path = "/note/search">
-          <Search></Search>
         </Route>
       </Switch>
     </Router>

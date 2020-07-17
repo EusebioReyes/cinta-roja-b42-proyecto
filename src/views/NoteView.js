@@ -37,7 +37,6 @@ const NoteView = () =>{
               nameNote = {note.name}
               dateNote = {note.date}
               totalNote = {note.total}
-              
                />
          
             </div>
