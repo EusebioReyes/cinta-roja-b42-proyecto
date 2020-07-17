@@ -16,9 +16,9 @@ const MenuBar = ({title}) =>{
       <li className="nav-item">
        <Link className="nav-link" to="/note/edit">Editar</Link>
       </li>
-      <li className="nav-item">
+     {/*  <li className="nav-item">
        <Link className="nav-link" to="/note/search/">Buscar</Link>
-      </li>
+      </li> */}
     </ul>
   </div>
   <h2>{title} </h2>
